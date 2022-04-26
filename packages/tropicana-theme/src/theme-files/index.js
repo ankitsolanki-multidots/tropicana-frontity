@@ -5,6 +5,8 @@ import List from "./list"
 import Post from "./post"
 import Page from "./page"
 import externalCSS from './common.css';
+import newsExternalCss from './news.css';
+
 
 const Root = ({ state, actions }) => {
 
@@ -27,6 +29,7 @@ console.log(data)
         }
       `} /> */}
       <Global styles={css(externalCSS)} />
+      <Global styles={css(newsExternalCss)} />
       <Header isPostType={data.isPostType} isPage={data.isPage}>
         <HeaderContent>
             <h1>Frontity Workshop</h1>
