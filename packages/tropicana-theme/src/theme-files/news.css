@@ -1,5 +1,5 @@
 .news_container .news-sortable {background: #FFFEEE}
-.news_container .page-title {font-size: 72px; text-align: center; font-weight: 700; text-transform: inherit; color: #64445B; padding: 40px 0; background: #FFF6DA}
+.news_container .page-title {font-size: 72px; text-align: center; font-weight: 700; text-transform: inherit; color: #64445B; padding: 40px 0; background: #FFF6DA; margin: 0;}
 .news_container .row.news-sortable {display: -webkit-box;display: -ms-flexbox;display: flex;-ms-flex-wrap: wrap;flex-wrap: wrap}
 .news_container .row.news-sortable .col-12.col-md-4 {padding-left: 0px; padding-right: 0px; -webkit-box-flex: 0;-ms-flex: 0 0 33.333%;flex: 0 0 33.333%;max-width: 33.333%}
 .news_container .row.news-sortable .col-12.col-md-6 {padding-left: 0px; padding-right: 0px; -webkit-box-flex: 0;-ms-flex: 0 0 50%;flex: 0 0 50%;max-width: 50%}

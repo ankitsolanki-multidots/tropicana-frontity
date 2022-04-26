@@ -4,8 +4,35 @@ import Link from "./link"
 import List from "./list"
 import Post from "./post"
 import Page from "./page"
+
+
+// Fonts Load
+import ArboriaThin from "./fonts/Arboria-Thin.woff2";
+import ArboriaThinItalic from "./fonts/Arboria-ThinItalic.woff2";
+import ArboriaLight from "./fonts/Arboria-Light.woff2";
+import ArboriaLightItalic from "./fonts/Arboria-LightItalic.woff2";
+import ArboriaMedium from "./fonts/Arboria-Medium.woff2";
+import ArboriaMediumItalic from "./fonts/Arboria-MediumItalic.woff2";
+import ArboriaBold from "./fonts/Arboria-Bold.woff2";
+import ArboriaBoldItalic from "./fonts/Arboria-BoldItalic.woff2";
+import ArboriaBook from "./fonts/Arboria-Book.woff2";
+import ArboriaBookItalic from "./fonts/Arboria-BookItalic.woff2";
+import ArboriaBlack from "./fonts/Arboria-Black.woff2";
+import ArboriaBlackItalic from "./fonts/Arboria-BlackItalic.woff2";
+import BeyondInfinity from "./fonts/BeyondInfinity.woff2";
+
 import externalCSS from './common.css';
+import headerExternalCss from './header.css';
+import footerExternalCss from './footer.css';
+import animationExternalCss from './animate.css';
+import aboutExternalCss from './about.css';
+import brandExternalCss from './brands.css';
 import newsExternalCss from './news.css';
+import contactExternalCss from './contact.css';
+import styleExternalCss from './style.min.css';
+import mediaExternalCss from './media.css';
+import externalleafImage from './images/leaf.png'
+import externalleafBorderImage from './images/leaf-border.png'
 
 
 const Root = ({ state, actions }) => {
@@ -17,39 +44,118 @@ console.log(data)
       <Head>
         <title>Frontity Workshop at JS Nation</title>
         <meta name="description" content="An introduction to creating a theme with Frontity" />
+        <script type="text/javascript" src="./js/fullpage-custom.js"></script>
       </Head>
-      {/* <Global styles={css`
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
-        html {
-            font-family: sans-serif;
-        }
-      `} /> */}
+      <Global styles={css`
+
+        @font-face{font-family:'Arboria';src:url(${ArboriaThin}) format('woff2');font-weight:100;font-style:normal;font-display:swap}
+        @font-face{font-family:'Arboria';src:url(${ArboriaThinItalic}) format('woff2');font-weight:100;font-style:italic;font-display:swap}
+        @font-face{font-family:'Arboria';src:url(${ArboriaLight}) format('woff2');font-weight:300;font-style:normal;font-display:swap}
+        @font-face{font-family:'Arboria';src:url(${ArboriaLightItalic}) format('woff2');font-weight:300;font-style:italic;font-display:swap}
+        @font-face{font-family:'Arboria';src:url(${ArboriaMedium}) format('woff2');font-weight:500;font-style:normal;font-display:swap}
+        @font-face{font-family:'Arboria';src:url(${ArboriaMediumItalic}) format('woff2');font-weight:500;font-style:italic;font-display:swap}
+        @font-face{font-family:'Arboria';src:url(${ArboriaBold}) format('woff2');font-weight:700;font-style:normal;font-display:swap}
+        @font-face{font-family:'Arboria';src:url(${ArboriaBoldItalic}) format('woff2');font-weight:700;font-style:italic;font-display:swap}
+        @font-face{font-family:'Arboria';src:url(${ArboriaBook}) format('woff2');font-weight:800;font-style:normal;font-display:swap}
+        @font-face{font-family:'Arboria';src:url(${ArboriaBookItalic}) format('woff2');font-weight:800;font-style:italic;font-display:swap}
+        @font-face{font-family:'Arboria';src:url(${ArboriaBlack}) format('woff2');font-weight:900;font-style:normal;font-display:swap}
+        @font-face{font-family:'Arboria';src:url(${ArboriaBlackItalic}) format('woff2');font-weight:900;font-style:italic;font-display:swap}
+        @font-face{font-family:'Beyond-Infinity';src:url(${BeyondInfinity}) format('woff2');font-weight:400;font-style:normal;font-display:swap}
+
+
+        #fp-nav ul li a.active span, .fp-slidesNav ul li a.active span, #fp-nav ul li:hover a.active span, .fp-slidesNav ul li:hover a.active span{background:transparent url(${externalleafImage}) center center no-repeat;background-size:21px}
+        #fp-nav ul li a span:hover, .fp-slidesNav ul li a span:hover{background:transparent url(${externalleafImage}) center center no-repeat;background-size:21px}
+        #fp-nav ul li a span, .fp-slidesNav ul li a span{border-radius:50%;position:absolute;z-index:1;height:24px;width:24px;background:transparent url(${externalleafBorderImage}) center center no-repeat;background-size:18px;left:8px;top:-4px;margin:0;-o-transition:all 0.25s ease 0s;transition:all 0.25s ease 0s;-webkit-transition:all 0.25s ease 0s;-moz-transition:all 0.25s ease 0s}
+      `} />
       <Global styles={css(externalCSS)} />
+      <Global styles={css(headerExternalCss)} />
+      <Global styles={css(footerExternalCss)} />
+      <Global styles={css(animationExternalCss)} />
+      <Global styles={css(aboutExternalCss)} />
+      <Global styles={css(brandExternalCss)} />
       <Global styles={css(newsExternalCss)} />
-      <Header isPostType={data.isPostType} isPage={data.isPage}>
-        <HeaderContent>
-            <h1>Frontity Workshop</h1>
-            <p>Current URL: {state.router.link}</p>
-            {state.theme.isMenuOpen ? (
-                <>
-                    {/* <Button onClick={actions.theme.closeMenu}>Close</Button> */}
-                    <Menu>
-                        <Link href="/">Home</Link>
-                    </Menu>
-                </>
-            ) : null
-            }
-        </HeaderContent>
-      </Header>
+      <Global styles={css(contactExternalCss)} />
+      <Global styles={css(styleExternalCss)} />
+      <Global styles={css(mediaExternalCss)} />
+      
+
+
+<header id="masthead" class="site-header">
+   <div class="container">
+      <div class="header-raw">
+         <div class="site-branding">
+            <a href="/" class="custom-logo-link" rel="home" aria-current="page">
+            <img src="https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group-408x116.webp" class="main_logo_header" alt="Tropicana Brands" srcset="https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group-408x116.webp 408w, https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group-300x85.webp 300w, https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group-768x218.webp 768w, https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group-150x43.webp 150w, https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group-90x26.webp 90w, https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group.webp 1000w" sizes="(max-width: 408px) 100vw, 408px" width="408" height="116" /></a>
+         </div>
+         <nav id="site-navigation" class="main-navigation">
+            <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+            <span class="screen-reader-text">Mobile Menu</span>
+            <span class="top"></span>
+            <span class="middle"></span>
+            <span class="bottom"></span>
+            </button>
+            <div class="menu-main-menu-container">
+               <ul id="primary-menu" class="menu nav-menu">
+                  <li id="menu-item-31" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31"><a href="/about-us/">About Us</a></li>
+                  <li id="menu-item-32" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32"><a href="/brands/">Brands</a></li>
+                  <li id="menu-item-34" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-34"><a href="/news/">News</a></li>
+                  <li id="menu-item-1352" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1352"><a href="/careers/">Careers</a></li>
+                  <li id="menu-item-33" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33"><a href="/contact/">Contact</a></li>
+               </ul>
+            </div>
+         </nav>
+      </div>
+   </div>
+</header>
+
+
+
       <Main>
         {data.isArchive && <List />}
         {data.isPost && <Post />}
         {data.isPage && <Page />}
       </Main>
+      
+
+<footer id="colophon" class="site-footer section-col">
+   <div class="container">
+      <div class="site-footer-raw section-col">
+         <div class="footer-section-left">
+            <a href="/" rel="home" aria-current="page">
+            <img src="https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group-Footer-300x85.webp" class="main_footer_logo" alt="Tropicana Footer Logo" loading="lazy" srcset="https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group-Footer-300x85.webp 300w, https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group-Footer-768x218.webp 768w, https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group-Footer-150x43.webp 150w, https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group-Footer-408x116.webp 408w, https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group-Footer-90x26.webp 90w, https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group-Footer.webp 1000w" sizes="(max-width: 300px) 100vw, 300px" width="300" height="85" /></a>
+         </div>
+         <div class="footer-section-center">
+            <nav id="site-navigation" class="main-navigation">
+               <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">Primary Menu</button>
+               <div class="menu-footer-menu-container">
+                  <ul id="footer-menu" class="menu">
+                     <li id="menu-item-56" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-56"><a href="/brands/">Brands</a></li>
+                     <li id="menu-item-58" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58"><a href="/news/">News</a></li>
+                     <li id="menu-item-1351" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1351"><a href="/careers/">Careers</a></li>
+                     <li id="menu-item-57" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-57"><a href="/contact/">Contact</a></li>
+                     <li id="menu-item-55" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-55"><a href="/privacy-policy/">Privacy Policy</a></li>
+                     <li id="menu-item-59" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-59"><a href="/terms-of-use/">Terms of Use</a></li>
+                  </ul>
+               </div>
+            </nav>
+         </div>
+         <div class="footer-section-right">
+            <div class="social-brandlogo section">
+               <div class="copyright-logo">
+                  <img src="https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-symbol-footer-90x135.webp" class="copyright_logo" alt="Tropicana-symbol" loading="lazy" srcset="https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-symbol-footer-90x135.webp 90w, https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-symbol-footer-150x225.webp 150w, https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-symbol-footer.webp 180w" sizes="(max-width: 90px) 100vw, 90px" width="90" height="135" />                     
+               </div>
+            </div>
+            <div class="copyright-content section-col">
+               <div class="site-info">
+                  ©Tropicana Brands Group and its licensors. All rights reserved.                           
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</footer>
+
+
     </>
   );
 };
@@ -87,6 +193,7 @@ margin: auto;
 
 img {
     max-width: 100%;
+    height: auto;
 }
 h2 {
     margin: 0.5em 0;

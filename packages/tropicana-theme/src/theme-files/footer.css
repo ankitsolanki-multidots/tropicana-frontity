@@ -1,0 +1,19 @@
+/* Footer CSS starts */
+
+.site-footer{border-top:3px solid #90C03B;background:#FFF6DA;padding:120px 0; position: relative; z-index: 111}
+.site-footer .site-footer-raw{display:-webkit-box;display:-ms-flexbox;display:flex}
+.site-footer-raw .footer-section-center{padding-left:200px}
+.site-footer-raw .footer-section-center .main-navigation ul{display:block;float:left;padding-top:15px}
+.site-footer-raw .footer-section-center .main-navigation ul li{margin-bottom:10px}
+.site-footer-raw .footer-section-center .main-navigation ul li a, .site-footer-raw .footer-section-right .copyright-content .site-info{color:#64445B;line-height:28px;font-size:20px;font-family:'Arboria', serif;font-weight:800}
+.site-footer-raw .footer-section-center .main-navigation ul li a:hover{color:#F3791C}
+.site-footer-raw .footer-section-right{margin-left:auto;width:560px}
+.site-footer-raw .footer-section-right .social-brandlogo{display:-webkit-box;display:-ms-flexbox;display:flex}
+.site-footer .footer-section-right .social-links {padding-top:24px}
+.site-footer .footer-section-right .social-links .ftsocial{float:left}
+.site-footer .footer-section-right .social-links .ftsocial li{float:left;margin-right:16px}
+.site-footer .footer-section-right .social-links .ftsocial li .social_icon{width:50px;height:50px;border-radius:100px;-webkit-border-radius:100px}
+.site-footer .footer-section-right .social-links .ftsocial li:last-child{margin-right:0}
+.site-footer-raw .footer-section-right .social-brandlogo .copyright-logo{margin-left:auto}
+.site-footer-raw .footer-section-right .copyright-content{text-align:right;margin-top:65px}
+/* Footer CSS ends */

@@ -11,7 +11,7 @@
 @font-face{font-family:'Arboria';src:url('../fonts/Arboria-Black.woff2') format('woff2'), url('../fonts/Arboria-Black.woff') format('woff');font-weight:900;font-style:normal;font-display:swap}
 @font-face{font-family:'Arboria';src:url('../fonts/Arboria-BlackItalic.woff2') format('woff2'), url('../fonts/Arboria-BlackItalic.woff') format('woff');font-weight:900;font-style:italic;font-display:swap}
 @font-face{font-family:'Beyond-Infinity';src:url('../fonts/BeyondInfinity.woff2') format('woff2'), url('../fonts/BeyondInfinity.woff') format('woff');font-weight:400;font-style:normal;font-display:swap}
-*{padding:0;margin:0;list-style:none}
+*{padding:0;margin:0;list-style:none;box-sizing: border-box;}
 html{overflow-x:hidden}
 html,html a,body{-webkit-font-smoothing:antialiased}
 body{background:#FFFFFF}
@@ -65,7 +65,7 @@ b, strong {font-weight: 600;font-family:'Arboria', serif;}
 a{outline:none;cursor:pointer;text-decoration:none;-o-transition:all 0.25s ease 0s;transition:all 0.25s ease 0s;-webkit-transition:all 0.25s ease 0s;-moz-transition:all 0.25s ease 0s}
 a:focus{outline:none}
 .clearfix{clear:both;display:block;font-size:inherit;height:0;line-height:0}
-img{max-width:100%}
+img{max-width:100%;height: auto;}
 .section-col{float:left;width:100%}
 h1,h2,h3,h4,h5,h6{font-family:'Arboria', serif;line-height:120%;color:#64445B;margin:0}
 h1{font-size:60px;color:#64445B;text-transform:inherit}
@@ -75,7 +75,7 @@ h4{font-size:20px;font-weight:400;color:#64445B}
 h5{font-size:18px;font-weight:400;color:#64445B}
 h6{font-size:15px;font-weight:400;color:#64445B}
 p{float:left;width:100%;font-size:24px;font-weight:800;color:#64445B;line-height:36px;font-family:'Arboria', serif; letter-spacing: -0.2px;}
-article,aside,details,figcaption,figure,footer,header,hgroup,nav,section{display:block}
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section{display:block}
 .entry-content .wp-block-buttons{display:inline-block}
 .btn-main, .our-story-inner .learn_more a, .wp-block-button .wp-block-button__link {font-size:24px;color:#ffffff!important;background:#FF7700;border-radius:10px;-webkit-border-radius:10px;text-transform:uppercase;font-weight:500;font-family:'Arboria',serif;line-height:120%!important;padding:10px 25px;margin-top:35px;display:inline-block;letter-spacing:0.25px;-o-transition:all 0.25s ease 0s;transition:all 0.25s ease 0s;-webkit-transition:all 0.25s ease 0s;-moz-transition:all 0.25s ease 0s}
 .btn-main:hover, .btn-main:focus, .our-story-inner .learn_more a:hover, .our-story-inner .learn_more a:focus, .wp-block-button .wp-block-button__link:hover, .wp-block-button .wp-block-button__link:focus {background:#ec6f02}
@@ -165,7 +165,8 @@ div.img_top_left, div.img_top_right, div.img_bottom_left, div.img_bottom_right {
 .term_container .right-conn.career-col h2 {margin-bottom: 35px}
 .term_container > .wp-block-columns {margin: 0 auto; padding:120px 0 30px 0}
 .term_container .term-list-col {padding: 0 0 80px 0;}
-.term_container ul.career-list-section {padding-left: 20px}
+.term_container ul.career-list-section {padding-left: 20px;float: left;width: 100%;padding-bottom: 15px;}
+.career-col .wp-block-buttons{display: inline-block;}
 .term_container ul.career-list-section li{list-style: disc;list-style-position: outside;font-size: 24px;line-height: 36px;float: left;width: 100%;font-weight: 800;color: #64445B;font-family: 'Arboria', serif;letter-spacing: -0.2px}
 .group_container .wp-block-group__inner-container, .brand_section {max-width:1280px;padding:0 15px;margin:0 auto}
 body.privacy-policy .site-main {float: left;width: 100%; padding: 80px 0;padding-bottom: 80px}

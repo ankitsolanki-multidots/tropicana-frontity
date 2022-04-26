@@ -1,0 +1,18 @@
+/* Header */
+.site-header{position:relative; background:#FFF6DA; z-index: 1111!important}
+.site-header::before{position:absolute;left:0;top:0;content:"";height:212px;width:40%;background:#FFFEEE; display: none}
+.site-header .header-raw{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;position:relative}
+.site-header .site-branding .main_logo_header {height: auto; width: 360px}
+.site-header .header-raw .main-navigation{width:auto;margin-left:auto;padding:50px 0}
+.site-header .header-raw .main-navigation .menu-main-menu-container {float: left}
+.site-header .header-raw .main-navigation a{color:#64445B;line-height:28px;font-size:20px;font-family:'Arboria', serif;font-weight:800;text-transform:uppercase}
+.site-header .header-raw .main-navigation a:hover, .site-header .header-raw .main-navigation a:active, .site-header .header-raw .main-navigation .current_page_item a{color:#F3791C}
+.site-header .header-raw .main-navigation li{margin-left:85px; display: inline-block}
+.site-header .header-raw .main-navigation li:first-child{margin-left:0}
+.main-navigation {display: block;width: 100%;}
+.menu-toggle, .main-navigation.toggled ul {display: block;}
+@media screen and (min-width: 37.5em){
+	.menu-toggle {
+	  display: none;
+	}
+}

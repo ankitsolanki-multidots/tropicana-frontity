@@ -1,0 +1,70 @@
+.contact-form-raw{float:left;width:100%;margin-bottom:50px}
+.contact-form-raw .contact-us-form-box{padding:80px 0;background:#ffffff!important}
+.contact-form-raw .form-container label{margin-bottom:8px;font-size:16px;font-family:'Arboria', serif;font-weight:400;color:#22252A!important;float:left;width:100%; clear: both}
+.contact-form-raw .form-container .form-group{position: relative;}
+.contact-form-raw .form-container label.required-label{position:relative;width:auto;padding-right:8px}
+.contact-form-raw .form-container label.required-label::before{content:"*";position:absolute;right:0;top:0;width:5px;height:5px;color:#22252A}
+.contact-form-raw .form-container input, .contact-form-raw .form-container textarea, .contact-form-raw .form-container select{height:54px;font-size:14px;padding:15px;font-weight:400;border:1px solid #80c341!important;font-family:'Arboria', serif;-o-transition:all 0.25s ease 0s;transition:all 0.25s ease 0s;-webkit-transition:all 0.25s ease 0s;-moz-transition:all 0.25s ease 0s;background: #f5faf0; color: #22252A !important}
+.contact-form-raw .form-container textarea{height:80px}
+.contact-form-raw .form-container input:focus, .contact-form-raw .form-container textarea:focus, .contact-form-raw .form-container select:focus{border:1px solid #22252A!important}
+.contact-form-raw .form-container select{background-image:url(../images/down-arrow.png);background-position:right 15px center;background-repeat:no-repeat;background-size:20px}
+.contact-form-raw .form-container input::-webkit-input-placeholder, .contact-form-raw .form-container textarea::-webkit-input-placeholder, .contact-form-raw .form-container select::-webkit-input-placeholder{color:#22252A;font-weight:400;font-family:'Arboria', serif}
+.contact-form-raw .form-container input::-moz-placeholder, .contact-form-raw .form-container textarea::-moz-placeholder, .contact-form-raw .form-container select::-moz-placeholder{color:#22252A;font-weight:400;font-family:'Arboria', serif}
+.contact-form-raw .form-container input:-ms-input-placeholder, .contact-form-raw .form-container textarea:-ms-input-placeholder, .contact-form-raw .form-container select:-ms-input-placeholder{color:#22252A;font-weight:400;font-family:'Arboria', serif}
+.contact-form-raw .form-container input:-moz-placeholder, .contact-form-raw .form-container textarea:-moz-placeholder, .contact-form-raw .form-container select:-moz-placeholder{color:#22252A;font-weight:400;font-family:'Arboria', serif}
+.form-group-submit{text-align:center;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;width:100%}
+.form-group-submit button{border-radius:10px;-webkit-border-radius:10px;-o-transition:all 0.25s ease 0s;transition:all 0.25s ease 0s;-webkit-transition:all 0.25s ease 0s;-moz-transition:all 0.25s ease 0s;height:50px;line-height:50px;padding:0 20px;font-family:'Arboria', serif; background: #ec6f02; color: #ffffff}
+.form-group-submit button:hover{color:#ffffff;background:#F3791C}
+.contact-form-raw .form-container .form-group .form-control.validation-error{border:1px solid #ff0000!important}
+.form-alert.success,.form-alert.fail{text-align:center;margin-top:15px}
+.form-alert.success p{color:#3c763d;display:inline-block;margin:15px auto;padding:15px 20px;border-radius:4px;-webkit-border-radius:4px;background-color:#dff0d8;border:1px solid #d6e9c6;font-weight:400}
+.form-alert.fail p{color:#f44336;display:inline-block;margin:15px auto;padding:15px 20px;border-radius:4px;-webkit-border-radius:4px;background-color:#f3e0df;border:1px solid #f9cac7;font-family:400}
+.contact-form-raw .row.form-container {margin-left: -15px; margin-right: -15px}
+.contact-form-raw .form-container .form-group .error{color:#f44336;font-size:14px;display:inherit;margin-top:0;font-family:'Arboria', serif;font-weight:400;letter-spacing:0.2px;float:left;position: absolute;left: 15px;bottom: -17px}
+.contact-form-raw .form-container .form-group.captcha-control{text-align:center}
+.contact-form-raw .form-container .form-group.captcha-control .captcha-inner{margin:0 auto;text-align:left;max-width:320px;position: relative;display: inline-block}
+.contact-form-raw .form-container .form-group.captcha-control .captcha-inner .error {left: 0}
+.contact-form-raw .form-container .form-group.captcha-control .captcha-inner .captcha-img{width:100%;position:relative;text-align:center;vertical-align:middle;margin:0 auto 15px}
+.contact-form-raw .form-container .form-group.captcha-control .captcha-inner .captcha-img img{vertical-align:middle;display:inline-block; width: 150px; border: 1px solid #80c341;}
+.contact-form-raw .form-container .form-group.captcha-control .captcha-inner .captcha-img button{font-size:0;width:40px;height:40px;background:transparent url(../images/icon-refresh.png) center center no-repeat;background-size:24px;display:inline-block;position:relative;top:-2px}
+.privacy-condition{text-align:center}
+.privacy-condition .form-control{float:none;display:inline-block;width:14px!important;height:14px!important}
+.privacy-condition label{color:#424242;display:inline-block;width:auto!important;float:none!important;margin:0}
+.denote-require-notice{text-align:center}
+.contact-form-raw .form-container .denote-require-notice label{margin:0}
+.privacy-condition label a{color:#80c341; display: inline-block}
+.privacy-condition label a:hover{color:#F3791C}
+.privacy-condition input{position:absolute;opacity:0}
+.privacy-condition input+label{position:relative;cursor:pointer;padding:0}
+.privacy-condition input+label::before{content:"";margin-right:10px;display:inline-block;vertical-align:text-top;width:16px;height:16px;background:#ffffff;-o-transition:all 0.25s ease 0s;transition:all 0.25s ease 0s;-webkit-transition:all 0.25s ease 0s;-moz-transition:all 0.25s ease 0s}
+/* .privacy-condition input:hover+label::before{background:#80c341} */
+.privacy-condition input+label::before, .privacy-condition input:focus+label::before{box-shadow:0 0 0 2px #80c341;-webkit-box-shadow:0 0 0 2px #80c341}
+
+.privacy-condition input:checked+label::before{background:#80c341}
+.privacy-condition input:disabled+label{color:#b8b8b8;cursor:auto}
+.privacy-condition input:disabled+label::before{-webkit-box-shadow:none;box-shadow:none;background:#ddd}
+.privacy-condition input:checked + label::after {content: "";position: absolute;left: 3px;top: 10px;background: #ffffff;width: 2px;height: 2px;box-shadow: 2px 0 0 #ffffff, 4px 0 0 #ffffff, 4px -2px 0 #ffffff, 4px -4px 0 #ffffff, 4px -6px 0 #ffffff, 4px -8px 0 #ffffff;-webkit-box-shadow: 2px 0 0 #ffffff, 4px 0 0 #ffffff, 4px -2px 0 #ffffff, 4px -4px 0 #ffffff, 4px -6px 0 #ffffff, 4px -8px 0 #ffffff;-ms-transform: rotate(45deg);transform: rotate(45deg);-webkit-transform: rotate(45deg)}
+.contact-form-raw .form-container .form-group.privacy-condition .error {float: none;display: block;clear: both}
+.privacy-condition .inner-content {display: inline-block;text-align: left;position: relative;margin-bottom: 0px !important}
+.privacy-condition .inner-content .error {left: 0!important }
+.tropicana-model-popup .contact-us-form-block .model-popup-success{top: 50% !important; opacity: 1 !important; visibility: visible !important}
+.contact-us-form-block .form-alert p.model-popup-success {opacity: 0;visibility: hidden;-o-transition:all 0.45s ease 0s;transition:all 0.45s ease 0s;-webkit-transition:all 0.45s ease 0s;-moz-transition:all 0.45s ease 0s;position: fixed;left: 50%;top: 30%;-ms-transform: translate(-50%, -50%);transform: translate(-50%, -50%);-webkit-transform: translate(-50%, -50%);width: 1078px;padding: 80px 50px;background: #FBF5D8 url(../images/logo-symbol.png) right 20px bottom 20px no-repeat;background-size: 90px;border-radius: 25px;-webkit-border-radius: 25px;box-shadow: 10px 10px 6px rgba(0, 0, 0, 0.16);-webkit-box-shadow: 10px 10px 6px rgba(0, 0, 0, 0.16);z-index: 1111;border: 0px;text-align: left}
+.contact-us-form-block .form-alert p.model-popup-success p {color: #FF7700;font-size: 36px;font-weight: 300;font-family:'Arboria', serif;line-height: 48px;letter-spacing: -0.2px;padding: 0 7% 0 0;margin: 0 0 45px;background: transparent;border: 0}
+.contact-us-form-block .form-alert p.model-popup-success p:last-child {margin-bottom: 0 }
+.contact-us-form-block .model-popup-success .model-popup-close-btn {position: absolute;right: 30px;top: 30px;width: 37px;height: 37px;background: transparent url(../images/icon-close.png) center center no-repeat;background-size: contain;font-size: 0px;cursor: pointer}
+.contact-us-form-block .col-12.col-md-6.form-group-submit {width: 100%}
+.tropicana-contact-loader .cform-loader {position: fixed;left: 48%;top: 47%;width: 75px;height: 75px;border-radius: 50%;background-color: transparent;content: "";-ms-transform: translate(-50%,-50%);transform: translate(-50%,-50%);-webkit-transform: translate(-50%,-50%);border: 4px solid #ffc60c;border-top-color: #80c340;border-bottom-color: #80c340;-webkit-animation: 1s spin linear infinite;animation: 1s spin linear infinite;z-index: 999999}
+.tropicana-contact-loader::after {content: "";position: fixed;left: 0;top: 0;width: 100%;height: 100%;background: rgba(0, 0, 0, 0.5);z-index: 111111}
+.grecaptcha-badge {z-index: 111}
+-webkit-@keyframes spin {
+  -webkit-from {-webkit-transform: rotate(0deg);-ms-transform: rotate(0deg);transform: rotate(0deg)}
+  -webkit-to {-webkit-transform: rotate(360deg);-ms-transform: rotate(360deg);transform: rotate(360deg)}
+} 
+@-webkit-keyframes spin {
+  from {-webkit-transform: rotate(0deg);transform: rotate(0deg)}
+  to {-webkit-transform: rotate(360deg);transform: rotate(360deg)}
+} 
+@keyframes spin {
+  from {-webkit-transform: rotate(0deg);transform: rotate(0deg)}
+  to {-webkit-transform: rotate(360deg);transform: rotate(360deg)}
+}
