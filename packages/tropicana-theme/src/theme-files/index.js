@@ -1,9 +1,12 @@
 import React from "react";
 import { connect, Global, css, styled, Head } from "frontity"
+import Switch from "@frontity/components/switch";
 import Link from "./link"
 import List from "./list"
 import Post from "./post"
 import Page from "./page"
+import Loading from "./loading"
+
 
 
 // Fonts Load
@@ -84,8 +87,8 @@ console.log(data)
    <div class="container">
       <div class="header-raw">
          <div class="site-branding">
-            <a href="/" class="custom-logo-link" rel="home" aria-current="page">
-            <img src="https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group-408x116.webp" class="main_logo_header" alt="Tropicana Brands" srcset="https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group-408x116.webp 408w, https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group-300x85.webp 300w, https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group-768x218.webp 768w, https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group-150x43.webp 150w, https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group-90x26.webp 90w, https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group.webp 1000w" sizes="(max-width: 408px) 100vw, 408px" width="408" height="116" /></a>
+            <Link href="/" class="custom-logo-link" rel="home" aria-current="page">
+            <img src="https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group-408x116.webp" class="main_logo_header" alt="Tropicana Brands" srcset="https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group-408x116.webp 408w, https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group-300x85.webp 300w, https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group-768x218.webp 768w, https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group-150x43.webp 150w, https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group-90x26.webp 90w, https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group.webp 1000w" sizes="(max-width: 408px) 100vw, 408px" width="408" height="116" /></Link>
          </div>
          <nav id="site-navigation" class="main-navigation">
             <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
@@ -96,11 +99,11 @@ console.log(data)
             </button>
             <div class="menu-main-menu-container">
                <ul id="primary-menu" class="menu nav-menu">
-                  <li id="menu-item-31" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31"><a href="/about-us/">About Us</a></li>
-                  <li id="menu-item-32" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32"><a href="/brands/">Brands</a></li>
-                  <li id="menu-item-34" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-34"><a href="/news/">News</a></li>
-                  <li id="menu-item-1352" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1352"><a href="/careers/">Careers</a></li>
-                  <li id="menu-item-33" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33"><a href="/contact/">Contact</a></li>
+                  <li id="menu-item-31" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31"><Link href="/about-us/">About Us</Link></li>
+                  <li id="menu-item-32" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32"><Link href="/brands/">Brands</Link></li>
+                  <li id="menu-item-34" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-34"><Link href="/news/">News</Link></li>
+                  <li id="menu-item-1352" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1352"><Link href="/careers/">Careers</Link></li>
+                  <li id="menu-item-33" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33"><Link href="/contact/">Contact</Link></li>
                </ul>
             </div>
          </nav>
@@ -111,9 +114,12 @@ console.log(data)
 
 
       <Main>
-        {data.isArchive && <List />}
-        {data.isPost && <Post />}
-        {data.isPage && <Page />}
+         <Switch>
+            <Loading when={data.isFetching} />
+            <List when={data.isArchive} />
+            <Post when={data.isPost} />
+            <Page when={data.isPage} />
+         </Switch>
       </Main>
       
 
@@ -121,20 +127,20 @@ console.log(data)
    <div class="container">
       <div class="site-footer-raw section-col">
          <div class="footer-section-left">
-            <a href="/" rel="home" aria-current="page">
-            <img src="https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group-Footer-300x85.webp" class="main_footer_logo" alt="Tropicana Footer Logo" loading="lazy" srcset="https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group-Footer-300x85.webp 300w, https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group-Footer-768x218.webp 768w, https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group-Footer-150x43.webp 150w, https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group-Footer-408x116.webp 408w, https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group-Footer-90x26.webp 90w, https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group-Footer.webp 1000w" sizes="(max-width: 300px) 100vw, 300px" width="300" height="85" /></a>
+            <Link href="/" rel="home" aria-current="page">
+            <img src="https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group-Footer-300x85.webp" class="main_footer_logo" alt="Tropicana Footer Logo" loading="lazy" srcset="https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group-Footer-300x85.webp 300w, https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group-Footer-768x218.webp 768w, https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group-Footer-150x43.webp 150w, https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group-Footer-408x116.webp 408w, https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group-Footer-90x26.webp 90w, https://prj-tropicana.md-staging.com/wp-content/uploads/2022/01/Tropicana-Brands-Group-Footer.webp 1000w" sizes="(max-width: 300px) 100vw, 300px" width="300" height="85" /></Link>
          </div>
          <div class="footer-section-center">
             <nav id="site-navigation" class="main-navigation">
                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">Primary Menu</button>
                <div class="menu-footer-menu-container">
                   <ul id="footer-menu" class="menu">
-                     <li id="menu-item-56" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-56"><a href="/brands/">Brands</a></li>
-                     <li id="menu-item-58" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58"><a href="/news/">News</a></li>
-                     <li id="menu-item-1351" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1351"><a href="/careers/">Careers</a></li>
-                     <li id="menu-item-57" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-57"><a href="/contact/">Contact</a></li>
-                     <li id="menu-item-55" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-55"><a href="/privacy-policy/">Privacy Policy</a></li>
-                     <li id="menu-item-59" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-59"><a href="/terms-of-use/">Terms of Use</a></li>
+                     <li id="menu-item-56" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-56"><Link href="/brands/">Brands</Link></li>
+                     <li id="menu-item-58" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58"><Link href="/news/">News</Link></li>
+                     <li id="menu-item-1351" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1351"><Link href="/careers/">Careers</Link></li>
+                     <li id="menu-item-57" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-57"><Link href="/contact/">Contact</Link></li>
+                     <li id="menu-item-55" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-55"><Link href="/privacy-policy/">Privacy Policy</Link></li>
+                     <li id="menu-item-59" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-59"><Link href="/terms-of-use/">Terms of Use</Link></li>
                   </ul>
                </div>
             </nav>

@@ -4,7 +4,7 @@ import { connect, styled } from "frontity"
 const Link = ({href, actions, children}) => {
     return (
         <div>
-            <Anchor
+            <a
                 href={href}
                 onClick={e => {
                     e.preventDefault()
@@ -12,13 +12,9 @@ const Link = ({href, actions, children}) => {
                 }}
             >
                 {children}
-            </Anchor>
+            </a>
         </div>
     )
 }
 
 export default connect(Link)
-
-const Anchor = styled.a`
-    color: steelblue;
-`
