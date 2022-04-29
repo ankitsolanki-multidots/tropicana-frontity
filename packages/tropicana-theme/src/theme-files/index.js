@@ -30,6 +30,7 @@ import footerExternalCss from './footer.css';
 import animationExternalCss from './animate.css';
 import aboutExternalCss from './about.css';
 import brandExternalCss from './brands.css';
+import brandLogoExternalCss from './brand-logo.css';
 import newsExternalCss from './news.css';
 import contactExternalCss from './contact.css';
 import styleExternalCss from './style.min.css';
@@ -76,6 +77,7 @@ console.log(data)
       <Global styles={css(animationExternalCss)} />
       <Global styles={css(aboutExternalCss)} />
       <Global styles={css(brandExternalCss)} />
+      <Global styles={css(brandLogoExternalCss)} />
       <Global styles={css(newsExternalCss)} />
       <Global styles={css(contactExternalCss)} />
       <Global styles={css(styleExternalCss)} />
