@@ -6,6 +6,7 @@ import List from "./list"
 import Post from "./post"
 import Page from "./page"
 import Loading from "./loading"
+import { useEffect } from "react";
 
 
 
@@ -37,12 +38,159 @@ import styleExternalCss from './style.min.css';
 import mediaExternalCss from './media.css';
 import externalleafImage from './images/leaf.png'
 import externalleafBorderImage from './images/leaf-border.png'
+import $ from 'jquery';
 
 
 const Root = ({ state, actions }) => {
 
   const data = state.source.get(state.router.link)
-console.log(data)
+useEffect(() => {
+   $(document).on("scroll", onScroll);
+    
+    //smoothscroll
+    $('a[href^="#"]').on('click', function (e) {
+        e.preventDefault();
+        $(document).off("scroll");
+        
+        $('a').each(function () {
+            $(this).removeClass('active');
+        })
+        $(this).addClass('active');
+      
+        var target = this.hash,
+            menu = target;
+        $target = $(target);
+        $('html, body').stop().animate({
+            'scrollTop': $target.offset().top+2
+        }, 1500, 'swing', function () {
+            window.location.hash = target;
+            $(document).on("scroll", onScroll);
+        });
+    });
+
+
+    function onScroll(event){
+        var scrollPos = $(document).scrollTop();
+        var lastSection = $('.last-section').position().top;
+        if( (lastSection + 5) <= scrollPos ){
+            $('body').addClass('stop-scroll');
+        }else{
+            $('body').removeClass('stop-scroll');
+        }
+        $('#fp-nav a').each(function () {
+            var currLink = $(this);
+            var refElement = $(currLink.attr("href"));
+            if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+                $('#fp-nav ul li a').removeClass("active");
+                currLink.addClass("active");
+            }
+            else{
+                currLink.removeClass("active");
+            }
+        });
+    }
+   $(document).ready(function() {
+      var maxHeight = 0;
+      $(".news_wrapper .news_column").each(function() {
+        if ($(this).height() > maxHeight) {
+          maxHeight = $(this).height();
+        }
+      }).height(maxHeight);
+    });
+   (function () {
+      const siteNavigation = document.getElementById('site-navigation');
+   
+      // Return early if the navigation don't exist.
+      if (!siteNavigation) {
+         return;
+      }
+   
+      const button = siteNavigation.getElementsByTagName('button')[0];
+   
+      // Return early if the button don't exist.
+      if ('undefined' === typeof button) {
+         return;
+      }
+   
+      const menu = siteNavigation.getElementsByTagName('ul')[0];
+   
+      // Hide menu toggle button if menu is empty and return early.
+      if ('undefined' === typeof menu) {
+         button.style.display = 'none';
+         return;
+      }
+   
+      if (!menu.classList.contains('nav-menu')) {
+         menu.classList.add('nav-menu');
+      }
+   
+      // Toggle the .toggled class and the aria-expanded value each time the button is clicked.
+      button.addEventListener('click', function () {
+         siteNavigation.classList.toggle('toggled');
+   
+         if (button.getAttribute('aria-expanded') === 'true') {
+            button.setAttribute('aria-expanded', 'false');
+         } else {
+            button.setAttribute('aria-expanded', 'true');
+         }
+      });
+   
+      // Remove the .toggled class and set aria-expanded to false when the user clicks outside the navigation.
+      document.addEventListener('click', function (event) {
+         const isClickInside = siteNavigation.contains(event.target);
+   
+         if (!isClickInside) {
+            siteNavigation.classList.remove('toggled');
+            button.setAttribute('aria-expanded', 'false');
+         }
+      });
+   
+      // Get all the link elements within the menu.
+      const links = menu.getElementsByTagName('a');
+   
+      // Get all the link elements with children within the menu.
+      const linksWithChildren = menu.querySelectorAll('.menu-item-has-children > a, .page_item_has_children > a');
+   
+      // Toggle focus each time a menu link is focused or blurred.
+      for (const link of links) {
+         link.addEventListener('focus', toggleFocus, true);
+         link.addEventListener('blur', toggleFocus, true);
+      }
+   
+      // Toggle focus each time a menu link with children receive a touch event.
+      for (const link of linksWithChildren) {
+         link.addEventListener('touchstart', toggleFocus, false);
+      }
+   
+      /**
+       * Sets or removes .focus class on an element.
+       */
+      function toggleFocus() {
+         if (event.type === 'focus' || event.type === 'blur') {
+            let self = this;
+            // Move up through the ancestors of the current link until we hit .nav-menu.
+            while (!self.classList.contains('nav-menu')) {
+               // On li elements toggle the class .focus.
+               if ('li' === self.tagName.toLowerCase()) {
+                  self.classList.toggle('focus');
+               }
+               self = self.parentNode;
+            }
+         }
+   
+         if (event.type === 'touchstart') {
+            const menuItem = this.parentNode;
+            event.preventDefault();
+            for (const link of menuItem.parentNode.children) {
+               if (menuItem !== link) {
+                  link.classList.remove('focus');
+               }
+            }
+            menuItem.classList.toggle('focus');
+         }
+      }
+   }());
+ }, []);
   return (
     <>
       <Head>

@@ -8,6 +8,7 @@ const Link = ({href, actions, children}) => {
                 href={href}
                 onClick={e => {
                     e.preventDefault()
+                    window.scrollTo(0, 0)
                     actions.router.set(href)
                 }}
             >
