@@ -21,6 +21,7 @@
 // }; 
 
 import Root from "./theme-files";
+import { footerMenuHandler } from "./theme-files/menu-handler";
 
 const tropicana = {
   name: "tropicana-theme",
@@ -29,11 +30,21 @@ const tropicana = {
   },
   state: {
     theme: {
+      menu: [],
       isMenuOpen: true
     }
   },
   actions: {
     theme: {
+      beforeSSR: async ({ state, actions }) => {
+        await actions.source.fetch(`menus/2`);
+        await actions.source.fetch(`menus/3`);
+      },
+    }
+  },
+  libraries: {
+    source: {
+      handlers: [footerMenuHandler],
     }
   }
 };

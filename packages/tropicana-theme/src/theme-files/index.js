@@ -194,7 +194,7 @@ useEffect(() => {
   return (
     <>
       <Head>
-        <title>Frontity Workshop at JS Nation</title>
+        <title>Tropicana</title>
         <meta name="description" content="An introduction to creating a theme with Frontity" />
         <script type="text/javascript" src="./js/fullpage-custom.js"></script>
       </Head>
@@ -249,11 +249,16 @@ useEffect(() => {
             </button>
             <div class="menu-main-menu-container">
                <ul id="primary-menu" class="menu nav-menu">
-                  <li id="menu-item-31" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31"><Link href="/about-us/">About Us</Link></li>
+                  {state.theme.headerMenu.map((item) => {
+                     return (
+                        <li id={"menu-item-" + item.ID} class={"menu-item menu-item-type-post_type menu-item-object-page menu-item-" + item.ID}><Link href={item.url}>{item.title}</Link></li>
+                     )
+                  })}
+                  {/* <li id="menu-item-31" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31"><Link href="/about-us/">About Us</Link></li>
                   <li id="menu-item-32" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32"><Link href="/brands/">Brands</Link></li>
                   <li id="menu-item-34" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-34"><Link href="/news/">News</Link></li>
                   <li id="menu-item-1352" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1352"><Link href="/careers/">Careers</Link></li>
-                  <li id="menu-item-33" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33"><Link href="/contact/">Contact</Link></li>
+                  <li id="menu-item-33" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33"><Link href="/contact/">Contact</Link></li> */}
                </ul>
             </div>
          </nav>
@@ -285,12 +290,17 @@ useEffect(() => {
                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">Primary Menu</button>
                <div class="menu-footer-menu-container">
                   <ul id="footer-menu" class="menu">
-                     <li id="menu-item-56" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-56"><Link href="/brands/">Brands</Link></li>
+                  {state.theme.headerMenu.map((item) => {
+                     return (
+                        <li id={"menu-item-" + item.ID} class={"menu-item menu-item-type-post_type menu-item-object-page menu-item-" + item.ID}><Link href={item.url}>{item.title}</Link></li>
+                     )
+                  })}
+                     {/* <li id="menu-item-56" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-56"><Link href="/brands/">Brands</Link></li>
                      <li id="menu-item-58" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58"><Link href="/news/">News</Link></li>
                      <li id="menu-item-1351" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1351"><Link href="/careers/">Careers</Link></li>
                      <li id="menu-item-57" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-57"><Link href="/contact/">Contact</Link></li>
                      <li id="menu-item-55" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-55"><Link href="/privacy-policy/">Privacy Policy</Link></li>
-                     <li id="menu-item-59" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-59"><Link href="/terms-of-use/">Terms of Use</Link></li>
+                     <li id="menu-item-59" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-59"><Link href="/terms-of-use/">Terms of Use</Link></li> */}
                   </ul>
                </div>
             </nav>
