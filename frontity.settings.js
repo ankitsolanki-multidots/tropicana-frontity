@@ -54,7 +54,7 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "https://prj-tropicana.md-staging.com",
+          "url": "https://prj-frontity-tro.md-staging.com",
           "homepage": "home",
         },
         // beforeSSR: async ({actions}) => {

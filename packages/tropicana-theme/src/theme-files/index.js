@@ -39,12 +39,66 @@ import mediaExternalCss from './media.css';
 import externalleafImage from './images/leaf.png'
 import externalleafBorderImage from './images/leaf-border.png'
 import $ from 'jquery';
+import fetch from 'cross-fetch';
+import {
+   ApolloClient,
+   InMemoryCache,
+   ApolloProvider,
+   useQuery,
+   gql
+ } from "@apollo/client";
+ import 'cross-fetch/polyfill';
 
+
+// const client = new ApolloClient({
+//    uri: "https://prj-frontity-tro.md-staging.com/graphql",
+//  });
+
+ const client = new ApolloClient({
+   uri: 'https://prj-frontity-tro.md-staging.com/graphql',
+   cache: new InMemoryCache()
+ });
+
+ const GET_Menus = gql`
+  query GETMenus {
+   menus {
+     nodes {
+       id
+       databaseId
+       name
+       menuItems {
+         edges {
+           node {
+             id
+             databaseId
+             label
+             parentId
+             path
+           }
+         }
+       }
+     }
+   }
+ }
+`;
 
 const Root = ({ state, actions }) => {
 
   const data = state.source.get(state.router.link)
 useEffect(() => {
+   client
+  .query({
+    query: GET_Menus
+  })
+  .then(result => {
+     state.theme.allenus = result;
+     result.data.menus.nodes.map((allMenu) => {
+      if(allMenu.name == "Main Menu") {
+         state.theme.HeaderMenuGraph = allMenu;
+      }
+   })
+     console.log(result)
+}).catch(err => console.log(err));
    $(document).on("scroll", onScroll);
     
     //smoothscroll
@@ -249,11 +303,18 @@ useEffect(() => {
             </button>
             <div class="menu-main-menu-container">
                <ul id="primary-menu" class="menu nav-menu">
-                  {state.theme.headerMenu.map((item) => {
+                  {/* {state.theme.headerMenu.map((item) => {
                      return (
                         <li id={"menu-item-" + item.ID} class={"menu-item menu-item-type-post_type menu-item-object-page menu-item-" + item.ID}><Link href={item.url}>{item.title}</Link></li>
                      )
-                  })}
+                  })} */}
+                  {
+                     state.theme.HeaderMenuGraph && state.theme.HeaderMenuGraph.menuItems.edges.map((item) => {
+                        return (
+                           <li id={"menu-item-" + item.node.databaseId} class={"menu-item menu-item-type-post_type menu-item-object-page menu-item-" + item.node.databaseId}><Link href={item.node.path}>{item.node.label}</Link></li>
+                        )
+                     })
+                  }
                   {/* <li id="menu-item-31" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31"><Link href="/about-us/">About Us</Link></li>
                   <li id="menu-item-32" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32"><Link href="/brands/">Brands</Link></li>
                   <li id="menu-item-34" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-34"><Link href="/news/">News</Link></li>
