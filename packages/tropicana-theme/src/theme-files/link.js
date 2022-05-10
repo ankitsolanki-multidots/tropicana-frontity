@@ -1,11 +1,13 @@
 import React from "react"
 import { connect, styled } from "frontity"
+import Link from "@frontity/components/link";
 
-const Link = ({href, actions, children}) => {
+const MarsLink = ({href, actions, children, ...props}) => {
     return (
         <div>
-            <a
-                href={href}
+            <Link {...props}
+                // href={href}
+                link={href}
                 onClick={e => {
                     e.preventDefault()
                     window.scrollTo(0, 0)
@@ -13,9 +15,9 @@ const Link = ({href, actions, children}) => {
                 }}
             >
                 {children}
-            </a>
+            </Link>
         </div>
     )
 }
 
-export default connect(Link)
+export default connect(MarsLink, { injectProps: false })

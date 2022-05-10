@@ -22,6 +22,7 @@
 
 import Root from "./theme-files";
 import { footerMenuHandler } from "./theme-files/menu-handler";
+import link from "@frontity/html2react/processors/link";
 
 const tropicana = {
   name: "tropicana-theme",
@@ -30,6 +31,7 @@ const tropicana = {
   },
   state: {
     theme: {
+      autoPrefetch: "in-view",
       menu: [],
       isMenuOpen: true
     }
@@ -45,8 +47,17 @@ const tropicana = {
   libraries: {
     source: {
       handlers: [footerMenuHandler],
-    }
-  }
+      
+    },
+    html2react: {
+      /**
+       * Add a processor to `html2react` so it processes the `<img>` tags
+       * and internal link inside the content HTML.
+       * You can add your own processors too.
+       */
+      processors: [link],
+    },
+  } 
 };
 
 export default tropicana
