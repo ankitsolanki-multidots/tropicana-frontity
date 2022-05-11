@@ -23,6 +23,8 @@
 import Root from "./theme-files";
 import { footerMenuHandler } from "./theme-files/menu-handler";
 import link from "@frontity/html2react/processors/link";
+import image from "@frontity/html2react/processors/image";
+import iframe from "@frontity/html2react/processors/iframe";
 
 const tropicana = {
   name: "tropicana-theme",
@@ -55,7 +57,7 @@ const tropicana = {
        * and internal link inside the content HTML.
        * You can add your own processors too.
        */
-      processors: [link],
+      processors: [image, iframe, link],
     },
   } 
 };
