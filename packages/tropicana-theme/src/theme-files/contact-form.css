@@ -1,4 +1,9 @@
 /* Contact Form CSS starts*/
+.wpcf7-form{
+	display: inline-block;
+	width: 100%;
+}
+
 .wpcf7-form .container {
 	padding-top: 80px;
 	padding-bottom: 80px;
@@ -16,8 +21,8 @@
 .wpcf7-form label {
 	margin-bottom: 8px;
 	font-size: 16px;
-	font-family: 'Arboria-Medium', serif;
-	font-weight: 400;
+	font-family: 'Arboria', serif;
+	font-weight: 500;
 	color: #22252A;
 	width: 100%;
 	float: left;
@@ -32,11 +37,11 @@ select {
 	width: 100%;
 	font-size: 14px;
 	padding: 15px;
-	font-weight: 400;
-	border: 1px solid #80c341;
-	font-family: 'Arboria-Medium', serif;
+	font-weight: 500;
+	border: 1px solid #80c341 !important;
+	font-family: 'Arboria', serif;
 	background: #f5faf0;
-	color: #22252A;
+	color: #22252A !important;
 	transition: all 0.25s ease 0s;
 	border-radius: 0;
 }
@@ -46,11 +51,11 @@ textarea {
 	width: 100%;
 	font-size: 14px;
 	padding: 15px;
-	font-weight: 400;
-	border: 1px solid #80c341;
-	font-family: 'Arboria-Medium', serif;
+	font-weight: 500;
+	border: 1px solid #80c341 !important;
+	font-family: 'Arboria', serif;
 	background: #f5faf0;
-	color: #22252A;
+	color: #22252A !important;
 	transition: all 0.25s ease 0s;
 	border-radius: 0;
 }
@@ -60,7 +65,7 @@ input[type="email"]:focus,
 input[type="tel"]:focus,
 select:focus,
 textarea:focus {
-	border: 1px solid #22252A;
+	border: 1px solid #22252A !important;
 }
 
 .privacy-condition,
@@ -68,21 +73,119 @@ textarea:focus {
 	text-align: center;
 }
 
+.privacy-condition input {
+	width: auto !important;
+	height: auto;
+	display: inline-block;
+	float: none;
+	margin-right: 10px;
+  }
+
+  .privacy-condition input + span {
+	position: relative;
+	cursor: pointer;
+	padding: 0;
+  }
+
+  .privacy-condition input + span::before {
+	content: "";
+	margin-right: 10px;
+	display: inline-block;
+	vertical-align: text-top;
+	width: 16px;
+	height: 16px;
+	background: #ffffff;
+	-o-transition: all 0.25s ease 0s;
+	transition: all 0.25s ease 0s;
+	-webkit-transition: all 0.25s ease 0s;
+	-moz-transition: all 0.25s ease 0s;
+	box-shadow: 0 0 0 2px #80c341;
+	-webkit-box-shadow: 0 0 0 2px #80c341;
+  }
+
+  .privacy-condition input:checked + span::before { 
+	background: #80c341;
+  }
+  .privacy-condition input:checked + span::after {
+	content: "";
+	position: absolute;
+	left: 3px;
+	top: 7px;
+	background: #ffffff;
+	width: 2px;
+	height: 2px;
+	box-shadow: 2px 0 0 #ffffff, 4px 0 0 #ffffff, 4px -2px 0 #ffffff, 4px -4px 0 #ffffff, 4px -6px 0 #ffffff, 4px -8px 0 #ffffff;
+	-webkit-box-shadow: 2px 0 0 #ffffff, 4px 0 0 #ffffff, 4px -2px 0 #ffffff, 4px -4px 0 #ffffff, 4px -6px 0 #ffffff, 4px -8px 0 #ffffff;
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+  }
+
+  .privacy-condition{
+	font-size: 16px;
+	font-family: 'Arboria', serif;
+	font-weight: 400;
+	color: #22252A !important;
+  }
+
+  .privacy-condition a{
+	color: #80c341;
+	font-family: 'Arboria', serif;
+	font-weight: 400;
+  }
+
+  .privacy-condition a:hover{
+	color: #F3791C;
+  }
+
 .form-group-submit {
 	text-align: center;
+	display: inline-block;
+	float: none;
 }
+
+.form-group-submit input[type="submit"]{
+	width: auto !important;
+	float: none;
+	border-radius: 10px !important;
+-webkit-border-radius: 10px;
+-o-transition: all 0.25s ease 0s;
+transition: all 0.25s ease 0s;
+-webkit-transition: all 0.25s ease 0s;
+-moz-transition: all 0.25s ease 0s;
+height: 50px;
+line-height: 50px;
+padding: 0 20px;
+font-family: 'Arboria', serif;
+font-weight: 500;
+background: #ec6f02;
+color: #ffffff !important;
+cursor: pointer;
+}
+
+.form-group-submit input[type="submit"]:hover {
+	color: #ffffff;
+	background: #F3791C;
+  }
 
 .wpcf7-not-valid {
 	border: 1px solid #f44336 !important;
 }
 
-.wpcf7-not-valid-tip {
+.wpcf7-not-valid-tip, .css-1v1quq2-NotValidTip {
 	color: #f44336;
 	font-size: 14px;
 	margin-top: 0;
-	font-family: 'Arboria-Book', serif;
-	font-weight: 400;
+	font-family: 'Arboria', serif;
+	font-weight: 300;
 	letter-spacing: 0.2px;
+}
+
+.error-message{
+	font-size: 16px;
+	margin-top: 0;
+	font-family: 'Arboria', serif;
+	font-weight: 300;
 }
 
 /* Contact Form CSS ends */
