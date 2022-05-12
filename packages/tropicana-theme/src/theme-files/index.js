@@ -34,6 +34,7 @@ import brandExternalCss from './brands.css';
 import brandLogoExternalCss from './brand-logo.css';
 import newsExternalCss from './news.css';
 import contactExternalCss from './contact.css';
+import contactformExternalCss from './contact-form.css';
 import styleExternalCss from './style.min.css';
 import mediaExternalCss from './media.css';
 import externalleafImage from './images/leaf.png'
@@ -282,6 +283,7 @@ useEffect(() => {
       <Global styles={css(brandLogoExternalCss)} />
       <Global styles={css(newsExternalCss)} />
       <Global styles={css(contactExternalCss)} />
+      <Global styles={css(contactformExternalCss)} />
       <Global styles={css(styleExternalCss)} />
       <Global styles={css(mediaExternalCss)} />
       
